@@ -28,34 +28,34 @@
                 }), false);
             }	
         });
-    	$A.enqueueAction(action);
+        $A.enqueueAction(action);
     },
     
     statusBreak: function(component, event, helper) {
-    	helper.statusUpdate(component, 'Break');
+        helper.statusUpdate(component, 'Break');
     },
 
     statusAvailable: function(component, event, helper) {
-		helper.statusUpdate(component, 'Available');
+        helper.statusUpdate(component, 'Available');
     },
     
     disconnect: function(component, event, helper) {
-		helper.stateUpdate(component, 'disconnect');
+        helper.stateUpdate(component, 'disconnect');
     },
     
     pickup: function(component, event, helper) {
-		helper.stateUpdate(component, 'pickup');
+        helper.stateUpdate(component, 'pickup');
     },
     
     mute: function(component, event, helper) {
-		helper.stateUpdate(component, 'mute');
+        helper.stateUpdate(component, 'mute');
     },
     
     hold: function(component, event, helper) {
-    	helper.stateUpdate(component, 'hold');
+        helper.stateUpdate(component, 'hold');
     },
     
     securePause: function(component, event, helper) {
- 		helper.stateUpdate(component, 'securePause');
+        helper.stateUpdate(component, 'securePause');
     },             
 })

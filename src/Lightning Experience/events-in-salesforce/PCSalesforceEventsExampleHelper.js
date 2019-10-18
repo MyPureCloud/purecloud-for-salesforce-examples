@@ -1,6 +1,6 @@
 ({
-	statusUpdate : function(component, status) {
-		var clientOrigin = component.get('v.clientOrigin'); 
+    statusUpdate : function(component, status) {
+        var clientOrigin = component.get('v.clientOrigin'); 
         var source = component.get('v.postMessageSource');
         
         if(source) {
@@ -9,7 +9,7 @@
                 data: { id: status }, 
             }, clientOrigin);
         }
-	},
+    },
     
     stateUpdate: function(component, action) {
         var clientOrigin = component.get('v.clientOrigin'); 
@@ -20,7 +20,7 @@
             source.postMessage({
                 type: 'PureCloud.User.updateState',
                 data: { action: action,
-                    	id: id
+                        id: id
                }, 
             }, clientOrigin);
         }
