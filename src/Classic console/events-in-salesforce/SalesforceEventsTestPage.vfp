@@ -1,0 +1,94 @@
+<apex:page >
+   <apex:includeScript value="/support/console/34.0/integration.js"/>
+ 
+   <style type="text/css">
+      .statusSelection {
+         position: relative;
+         display: block;
+         padding-top: 6px;
+      }
+   </style>
+
+   <script type="text/javascript">
+ 
+   //Omni Status Map Ids are org specific
+   var statusMap = {Omni:{available:"0N5j00000008QNQ" , queue:"0N5j00000008QMt"}, PureCloud:{available:"AVAILABLE", queue:"ON_QUEUE"}};
+ 
+   function OutputToConsole(message){
+      console.log(message);
+      if(document.getElementById("OUTPUTCONSOLE").value != ""){
+         document.getElementById("OUTPUTCONSOLE").value = document.getElementById("OUTPUTCONSOLE").value + " \r\n";
+      }
+ 
+      document.getElementById("OUTPUTCONSOLE").value = document.getElementById("OUTPUTCONSOLE").value + message;
+   }
+
+   function changeStatus(status) { 
+      if(status == 'available'){
+         sforce.console.fireEvent('inin.salesforce.constants.consoleevent.changestatus', statusMap.PureCloud.available , function(data){console.log(data);});
+         sforce.console.presence.setServicePresenceStatus(statusMap.Omni.available);
+      }else if(status = 'onQueue'){
+         sforce.console.fireEvent('inin.salesforce.constants.consoleevent.changestatus', statusMap.PureCloud.queue , function(data){console.log(data);});
+         sforce.console.presence.setServicePresenceStatus(statusMap.Omni.queue);
+      }
+   }
+    
+    function changeState(state) { 
+        var id = document.getElementById('interactionId').value;
+        var msg = JSON.stringify({data: {
+                id: id,
+                action: state
+        	}
+        });
+        sforce.console.fireEvent('inin.salesforce.constants.consoleevent.changestate', msg, function(data){console.log(data)});
+    }
+
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.UPDATE_STATUS', function(data){
+        OutputToConsole(JSON.stringify(data));
+    });
+
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.INTERACTION_CONNECTED', function(data){
+        OutputToConsole(JSON.stringify(data));
+    });
+
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.INTERACTION_DISCONNECTED', function(data){
+        OutputToConsole(JSON.stringify(data));
+    });
+
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.ACW_REQUIRED', function(data){
+        OutputToConsole(JSON.stringify(data));
+    });
+
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.ACW_COMPLETED', function(data){
+        OutputToConsole(JSON.stringify(data));
+    });
+
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.INTERACTION_EVENT', function(data) {
+        var id = JSON.parse(data.message).data.data.id;
+        var category = JSON.parse(data.message).data.category;
+        if(id && category === 'add') {
+            document.getElementById('interactionId').value = id;
+        }
+        OutputToConsole(JSON.stringify(data));
+    });
+
+   </script>
+   <span class="statusSelection">
+      <label>Interaction Id: </label>
+      <input id="interactionId" type="text" value="" size = "40"/>
+   <br/><hr/>
+      <input type="button" onclick="changeState('disconnect')" value="disconnect interaction" />
+      <input type="button" onclick="changeState('pickup')" value="pickup interaction" />
+      <input type="button" onclick="changeState('mute')" value="mute interaction" />
+      <input type="button" onclick="changeState('hold')" value="hold interaction" />
+      <input type="button" onclick="changeState('securePause')" value = "secure pause interaction" />
+   <hr/>
+      <input type="button" onclick="changeStatus('available')" value="Change status to Available" /> |
+      <input type="button" onclick="changeStatus('onQueue')" value="Change Status to On Queue" />
+   </span>
+   <hr/>
+   <span>
+       <textArea id="OUTPUTCONSOLE" rows="20" cols="100" ></textArea>
+   </span>
+ 
+</apex:page>
