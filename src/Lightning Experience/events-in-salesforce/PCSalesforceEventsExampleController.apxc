@@ -8,7 +8,7 @@ public class PCSalesforceEventsExampleController {
         User userRecord = [Select CallCenterId From User Where Id =: userId Limit 1];
         
         if(String.isNotBlank(userRecord.CallCenterId)) {
-            CallCenter callCenterRecord = [Select AdapterUrl From CallCenter Where Id =: userREcord.CallCenterId Limit 1];
+            CallCenter callCenterRecord = [Select AdapterUrl From CallCenter Where Id =: userRecord.CallCenterId Limit 1];
             
             if(String.isNotBlank(callCenterRecord.AdapterUrl)) {
                 url = callCenterRecord.AdapterUrl;

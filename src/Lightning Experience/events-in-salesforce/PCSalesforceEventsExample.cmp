@@ -1,6 +1,5 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PCSalesforceEventsExampleController">
     <lightning:utilityBarAPI aura:id="utilitybar" />
-    <lightning:empApi aura:id="empApi"/>
     <aura:handler name="init" value="{!this}" action="{!c.initComponent}"/>
     <aura:attribute name="interactionId" type="String" />
     <aura:attribute name="clientOrigin" type="String" />

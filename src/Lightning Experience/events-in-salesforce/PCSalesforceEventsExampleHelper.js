@@ -18,7 +18,7 @@
         
         if(source) {
             source.postMessage({
-                type: 'PureCloud.User.updateState',
+                type: 'PureCloud.Interaction.updateState',
                 data: { action: action,
                         id: id
                }, 

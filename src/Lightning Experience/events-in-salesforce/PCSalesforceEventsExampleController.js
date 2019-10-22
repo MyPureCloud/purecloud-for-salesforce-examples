@@ -57,5 +57,5 @@
     
     securePause: function(component, event, helper) {
         helper.stateUpdate(component, 'securePause');
-    },             
+    },
 })
