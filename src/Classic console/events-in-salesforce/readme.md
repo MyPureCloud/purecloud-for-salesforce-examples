@@ -1,5 +1,5 @@
-# Events in Salesforce Lightning App
-This repository contains an example component that allows Salesforce Lightning Experience users to test PureCloud for Salesforce events in a Salesforce Lightning app.
+# Events in Salesforce Classic Console App
+This repository contains an example component that allows Salesforce Classic users to test PureCloud for Salesforce events in a Salesforce console app.
 
 # Table of Contents
 
@@ -7,7 +7,6 @@ This repository contains an example component that allows Salesforce Lightning E
   * [TL;DR](#tldr)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-  * [Configuration](#configuration)
   * [Usage](#usage)
 * [Additional Information](#additional-information)
 
@@ -16,56 +15,51 @@ This repository contains an example component that allows Salesforce Lightning E
 ## TL;DR
 
 1. Check the version of your PureCloud for Salesforce managed package.
-2. Create a Lightning app with the example code in the repository.
-3. Enable client events in PureCloud for Salesforce.
-4. Use the example app to test PureCloud for Salesforce events.
+2. Create a Visualforce page with the example code in the repository.
+3. Use the example app to test PureCloud for Salesforce events.
 
 ## Prerequisites
 
 * Version 2.49 or later of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
 
-# Installation
+## Installation
 
 ### Check the Version of the Managed Package
 
 1. Check the version of your PureCloud for Salesforce managed package.
 2. If the managed package is not version 2.49 or later, update the managed package.
 
-### Create a Lightning Component
+### Create a Visualforce Page
 
-1. In Salesforce Lightning Experience, open **Developer Console**.
-2. Click **File** > **New** > **Lightning Component**.
-3. Enter a name for your Lightning Bundle and click **Submit**.
-4. Add the example code in The repository to this component and then save the file.
+1. In Salesforce, open **Developer Console**.
+2. Click **File** > **New** > **Visualforce Page**.
+3. Enter a name for your Apex page and click **OK**.
+4. Copy the example code in the repository to this page and then save the file.
 
-### Add a Utility Item
+### Create a Custom Console Component
 
-1. In Salesforce Lightning Experience, click **Setup**.
-2. Search for and click **App Manager**.
-3. Find a Lightning app.
-4. Click **Arrow** > **Edit**.  
-5. Under **App Settings**, click **Utility Items**.
-6. Click **Add Utility Item**.
-7. Select the Lightning component that you created.
-8. Set **Panel Width** to **340** and **Panel Height** to **480**.
-9. Select **Start automatically**.
-10. Click **Save**.
+1. In Salesforce, click **Setup**.
+2. Search for and click **Custom Console Components**.
+3. Click **New**.
+4. Add names to the **Name** and **Button Name** text boxes.
+5. Under **Component**, search for and select the Visualforce page that you created.
+6. Click **Save**.
 
-The Lightning component now appears on the lower-left or lower-right corner of certain Lightning Experience pages.
+### Select Your Visualforce Page // <-- add your visualforce page to the component? >
 
-# Configuration
+1. In Salesforce, click **Setup**.
+2. Search for and click **Apps**.
+3. Find the ServiceCloudConsole app. The name of this app can be unique for your Salesforce organization. In the example, the app is called Sample Console.
+![Service Cloud Console example application](ServiceCloudConsole_pc.png)
+4. Click **Edit**. The Custom App Edit page for the ServiceCloudConsole appears.
+5. Under **Choose Console Components**, move your Visualforce page from Available Items to Selected Items.
+6. Click **Save**.
 
-1. In Salesforce Lightning Experience, click **Setup**.
-2. Search for and click **Installed Packages**.
-3. On the **Installed Packages** page, click **Configure** next to the PureCloud for Salesforce package.
-4. Under **Choose a Call Center**, select **PureCloud for Salesforce Lightning**.
-5. Select **Enable Client Events**.
-6. Under **Client Event Types**, at a minimum move **Interaction** and **UserAction** from **Available** to **Chosen**.
-7. Click **Save**.
+The custom console component now appears in the lower-left or lower-right corner of certain Service Cloud pages.
 
 ## Usage
 
-After you complete the steps under **Installation** and **Configuration**, click the Lightning component to test Salesforce events.
+After you complete the steps under **Installation**, click the custom console component to test Salesforce events.
 
 * You can change the status of your user.
 * You can also change the state of an active interaction with pickup, disconnect, hold, mute, or secure pause.
