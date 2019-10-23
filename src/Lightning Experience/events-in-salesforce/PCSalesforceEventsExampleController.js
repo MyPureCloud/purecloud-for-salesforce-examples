@@ -15,11 +15,16 @@
                     }
                                                     
                     if(event.data && event.data.type) {
+                        
                         if(event.source && event.data.type === 'Handshake') {
+                            var message = JSON.stringify(event.data);
+                            helper.outputToConsole(component, message);
                             component.set('v.postMessageSource', event.source);
                         }
                         
                         if(event.source && event.data.type === 'Interaction') {
+                            var message = JSON.stringify(event.data);
+                            helper.outputToConsole(component, message);
                             if(event.data.data.id) {
                                 component.set("v.interactionId", event.data.data.id );
                             }
@@ -57,5 +62,5 @@
     
     securePause: function(component, event, helper) {
         helper.stateUpdate(component, 'securePause');
-    },
+    }
 })

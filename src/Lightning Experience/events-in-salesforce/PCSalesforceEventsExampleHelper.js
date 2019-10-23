@@ -24,5 +24,12 @@
                }, 
             }, clientOrigin);
         }
+    },
+    
+    outputToConsole: function(component, message) {
+        if(message) { 
+            var console = component.get('v.consoleMessages');
+            component.set('v.consoleMessages', console + message + " \r\n###");
+        }
     }
 })

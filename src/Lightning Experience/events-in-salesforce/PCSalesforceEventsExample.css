@@ -8,7 +8,7 @@
 }
 
 .THIS .event-button-large {
-    width: 180px;
+    width: 184px;
 }
 
 .THIS .event-label {
@@ -17,4 +17,8 @@
 
 .THIS .button-set {
     margin-bottom: 10px;
+}
+
+.THIS .output-console textarea {
+    height: 95px;
 }
