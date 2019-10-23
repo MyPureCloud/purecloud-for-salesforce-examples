@@ -45,7 +45,7 @@ This repository contains an example component that allows Salesforce Classic use
 5. Under **Component**, search for and select the Visualforce page that you created.
 6. Click **Save**.
 
-### Select Your Visualforce Page // <-- add your visualforce page to the component? >
+### Select Your Visualforce Page 
 
 1. In Salesforce, click **Setup**.
 2. Search for and click **Apps**.
