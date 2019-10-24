@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PCSalesforceEventsExampleDocController">
+    <aura:handler name="init" value="{!this}" action="{!c.initComponent}"/>
+    <aura:attribute name="interactionId" type="String" />
+    <aura:attribute name="clientOrigin" type ="String" />
+    <aura:attribute name="consoleMessages" type ="String" default=""/>
+    <aura:attribute name="postMessageSource" type = "Object" /> 
+    <div>
+        <ui:inputText label="Interaction Id: " class="field" value="{!v.interactionId}" updateOn="change"/>
+        <div class="button-set">
+        <br />
+        <label class="event-label">Update Interaction State:</label>
+        <br />
+            <lightning:button class="interaction-event-button" label="pickup" onclick="{!c.pickup}" />
+            <lightning:button class="interaction-event-button" label="disconnect" onclick="{!c.disconnect}" />
+            <br />
+            <lightning:button class="interaction-event-button" label="mute" onclick="{!c.mute}" />
+            
+            <lightning:button class="interaction-event-button" label="hold" onclick="{!c.hold}" />
+            <br />
+            <lightning:button class="event-button-large" label="secure pause" onclick="{!c.securePause}" />
+        </div>
+        <div class="button-set">
+            <label class="event-label">Update Status:</label>
+            <br/>
+            <lightning:buttonGroup>
+                <lightning:button label="Break" onclick="{!c.statusBreak }" />
+                <lightning:button label="Available" onclick="{!c.statusAvailable }" />
+            </lightning:buttonGroup>
+        </div>
+        <div class="button-set">
+        	<label class="event-label">Subscription Events:</label>
+            <lightning:textarea class="output-console" name="outputConsole" value="{!v.consoleMessages}" updateOn="change" />
+        </div>
+    </div>
+</aura:component>

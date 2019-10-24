@@ -1,0 +1,24 @@
+.THIS {
+    background: #fff;
+    padding: 13px; 
+}
+
+.THIS .interaction-event-button {
+    width: 90px;
+}
+
+.THIS .event-button-large {
+    width: 184px;
+}
+
+.THIS .event-label {
+    font-weight: bold;
+}
+
+.THIS .button-set {
+    margin-bottom: 10px;
+}
+
+.THIS .output-console textarea {
+    height: 95px;
+}
