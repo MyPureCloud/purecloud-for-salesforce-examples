@@ -31,12 +31,23 @@ This repository contains an example component that allows Salesforce Lightning E
 1. Check the version of your PureCloud for Salesforce managed package.
 2. If the managed package is not version 2.49 or later, update the managed package.
 
-### Create a Lightning Component
+### Create an Apex Class
 
 1. In Salesforce Lightning Experience, open **Developer Console**.
-2. Click **File** > **New** > **Lightning Component**.
-3. Enter a name for your Lightning Bundle and click **Submit**.
-4. Add the example code in The repository to this component and then save the file.
+2. Click **File** > **New** > **Apex Class**.
+3. Enter a name for your Apex class and click **OK**.
+4. Copy the contents of **PCSalesforceExampleController.apxc** in the repository to your file and then save the file.
+
+### Create a Lightning Component
+1. In the Developer Console, click **File** > **New** > **Lightning Component**.
+2. Enter a name for your Lightning Bundle and click **Submit**.
+3. Copy the contents of **PCSalesforceEventsExample.cmp** in the repository to your file and then save the file.
+4. In the Lightning component navigation, click **Controller**.
+5. Copy the contents of **PCSalesforceEventsExampleController.js** in the repository to your file and then save the file.
+6. In the Lightning component navigation, click **Helper**.
+7. Copy the contents of **PCSalesforceEventsExampleHelper.js** in the repository to your file and then save the file.
+8. In the Lightning component navigation, click **Style**.
+9. Copy the contents of **PCSalesforceEventsExample.css** in the repository to your file and then save the file.
 
 ### Add a Utility Item
 
@@ -51,7 +62,7 @@ This repository contains an example component that allows Salesforce Lightning E
 9. Select **Start automatically**.
 10. Click **Save**.
 
-The Lightning component now appears on the lower-left or lower-right corner of certain Lightning Experience pages.
+The Lightning component now appears on the lower-left corner of certain Lightning Experience pages.
 
 # Configuration
 
