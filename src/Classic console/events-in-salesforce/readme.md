@@ -45,7 +45,7 @@ This repository contains an example component that allows Salesforce Classic use
 5. Under **Component**, search for and select the Visualforce page that you created.
 6. Click **Save**.
 
-### Add Your Custom Console Component
+### Add the Custom Console Component
 
 1. In Salesforce, click **Setup**.
 2. Search for and click **Apps**.
