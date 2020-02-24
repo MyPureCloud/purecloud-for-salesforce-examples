@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PCSalesforceEventsExampleDocController">
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PCSalesforceEventsExampleController">
     <aura:handler name="init" value="{!this}" action="{!c.initComponent}"/>
     <aura:attribute name="interactionId" type="String" />
     <aura:attribute name="clientOrigin" type ="String" />
