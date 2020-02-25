@@ -1,9 +1,10 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PCSalesforceEventsExampleController">
     <aura:handler name="init" value="{!this}" action="{!c.initComponent}"/>
     <aura:attribute name="interactionId" type="String" />
+    <aura:attribute name="attributes" type="String" />
     <aura:attribute name="clientOrigin" type ="String" />
     <aura:attribute name="consoleMessages" type ="String" default=""/>
-    <aura:attribute name="postMessageSource" type = "Object" /> 
+    <aura:attribute name="postMessageSource" type = "Object" />
     <div>
         <ui:inputText label="Interaction Id: " class="field" value="{!v.interactionId}" updateOn="change"/>
         <div class="button-set">
@@ -14,7 +15,7 @@
             <lightning:button class="interaction-event-button" label="disconnect" onclick="{!c.disconnect}" />
             <br />
             <lightning:button class="interaction-event-button" label="mute" onclick="{!c.mute}" />
-            
+
             <lightning:button class="interaction-event-button" label="hold" onclick="{!c.hold}" />
             <br />
             <lightning:button class="event-button-large" label="secure pause" onclick="{!c.securePause}" />
@@ -26,6 +27,12 @@
                 <lightning:button label="Break" onclick="{!c.statusBreak }" />
                 <lightning:button label="Available" onclick="{!c.statusAvailable }" />
             </lightning:buttonGroup>
+        </div>
+        <div>
+        	<label class="event-label">Add Custom Attributes:</label>
+            <br />
+            <ui:inputText class="field" value="{!v.attributes}" updateOn="change"/>
+            <lightning:button label="Add" onclick="{!c.addAttributes}" />
         </div>
         <div class="button-set">
         	<label class="event-label">Subscription Events:</label>

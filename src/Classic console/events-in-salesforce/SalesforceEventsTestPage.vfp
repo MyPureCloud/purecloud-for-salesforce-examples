@@ -1,6 +1,6 @@
 <apex:page >
    <apex:includeScript value="/support/console/34.0/integration.js"/>
- 
+
    <style type="text/css">
       .statusSelection {
          position: relative;
@@ -10,20 +10,20 @@
    </style>
 
    <script type="text/javascript">
- 
+
    //Omni Status Map Ids are org specific
    var statusMap = {Omni:{available:"0N5j00000008QNQ" , queue:"0N5j00000008QMt"}, PureCloud:{available:"AVAILABLE", queue:"ON_QUEUE"}};
- 
+
    function OutputToConsole(message){
       console.log(message);
       if(document.getElementById("OUTPUTCONSOLE").value != ""){
          document.getElementById("OUTPUTCONSOLE").value = document.getElementById("OUTPUTCONSOLE").value + " \r\n";
       }
- 
+
       document.getElementById("OUTPUTCONSOLE").value = document.getElementById("OUTPUTCONSOLE").value + message;
    }
 
-   function changeStatus(status) { 
+   function changeStatus(status) {
       if(status == 'available'){
          sforce.console.fireEvent('inin.salesforce.constants.consoleevent.changestatus', statusMap.PureCloud.available , function(data){console.log(data);});
          sforce.console.presence.setServicePresenceStatus(statusMap.Omni.available);
@@ -32,15 +32,37 @@
          sforce.console.presence.setServicePresenceStatus(statusMap.Omni.queue);
       }
    }
-    
-    function changeState(state) { 
-        var id = document.getElementById('interactionId').value;
+
+    function getInteractionId() {
+        return document.getElementById('interactionId').value;
+    }
+
+    function changeState(state) {
+        var id = getInteractionId();
         var msg = JSON.stringify({data: {
                 id: id,
                 action: state
         	}
         });
         sforce.console.fireEvent('inin.salesforce.constants.consoleevent.changestate', msg, function(data){console.log(data)});
+    }
+
+    function addCustomAttributes() {
+        var id = getInteractionId();
+        var customAttributesText = document.getElementById('customAttributes').value;
+        var customAttributes = {};
+        try{
+        	customAttributes = JSON.parse(customAttributesText);
+        } catch(e){
+            console.log('Error parsing custom attributes: ' + JSON.stringify(e.message));
+        }
+        var msg = JSON.stringify({
+            data: {
+            	id: id,
+            	attributes: customAttributes
+        	}
+        });
+        sforce.console.fireEvent('inin.salesforce.constants.consoleevent.addCustomAttributes', msg, function(data){console.log(data)});
     }
 
     sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.UPDATE_STATUS', function(data){
@@ -52,6 +74,10 @@
     });
 
     sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.INTERACTION_DISCONNECTED', function(data){
+        OutputToConsole(JSON.stringify(data));
+    });
+
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.LOGGED_OUT', function(data){
         OutputToConsole(JSON.stringify(data));
     });
 
@@ -85,10 +111,16 @@
    <hr/>
       <input type="button" onclick="changeStatus('available')" value="Change status to Available" /> |
       <input type="button" onclick="changeStatus('onQueue')" value="Change Status to On Queue" />
+   <hr/>
+      <label>Custom Attributes: </label>
+       <input id="customAttributes" type="text" value="" size="100"/>
+       <br/>
+       <input type="button" onclick="addCustomAttributes()" value="Add Custom Attributes" />
+   <hr/>
    </span>
    <hr/>
    <span>
        <textArea id="OUTPUTCONSOLE" rows="20" cols="100" ></textArea>
    </span>
- 
+
 </apex:page>
