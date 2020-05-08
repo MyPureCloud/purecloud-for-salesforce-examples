@@ -25,7 +25,7 @@ The example code contained in this repository utilizes Lightning Message Service
 
 ## Prerequisites
 
-* Version 2.49 or later of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
+* PureCloud for Salesforce installed in your Salesforce organization using a version of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package that supports Lightning Message Service.
 
 # Installation
 
