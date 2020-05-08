@@ -1,6 +1,9 @@
 # Events in Salesforce Lightning App
 This repository contains an example component that allows Salesforce Lightning Experience users to test PureCloud for Salesforce events in a Salesforce Lightning app.
 
+# :warning: Warning
+The example code contained in this repository utilizes Lightning Message Service, which is still a beta feature in Salesforce and is not available yet in released versions of the PureCloud for Salesforce managed package.
+
 # Table of Contents
 
 * [Getting Started](#getting-started)
@@ -29,14 +32,7 @@ This repository contains an example component that allows Salesforce Lightning E
 ### Check the Version of the Managed Package
 
 1. Check the version of your PureCloud for Salesforce managed package.
-2. If the managed package is not version 2.49 or later, update the managed package.
-
-### Create an Apex Class
-
-1. In Salesforce Lightning Experience, open **Developer Console**.
-2. Click **File** > **New** > **Apex Class**.
-3. Enter a name for your Apex class and click **OK**.
-4. Copy the contents of **PCSalesforceExampleController.apxc** in the repository to your file and then save the file.
+2. If the managed package is not a version that supports Lightning Message Service, update the managed package.
 
 ### Create a Lightning Component
 1. In the Developer Console, click **File** > **New** > **Lightning Component**.

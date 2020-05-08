@@ -1,29 +1,23 @@
 ({
+    sendMessage: function (component, message) {
+        component.find('clientEventMessageChannel').publish(message);
+    },
     statusUpdate : function(component, status) {
-        var clientOrigin = component.get('v.clientOrigin');
-        var source = component.get('v.postMessageSource');
-
-        if(source) {
-            source.postMessage({
-                type: 'PureCloud.User.updateStatus',
-                data: { id: status },
-            }, clientOrigin);
-        }
+        this.sendMessage(component, {
+            type: 'PureCloud.User.updateStatus',
+            data: { id: status },
+        });
     },
 
     stateUpdate: function(component, action) {
-        var clientOrigin = component.get('v.clientOrigin');
-        var source = component.get('v.postMessageSource');
-        var id = component.get('v.interactionId');
-
-        if(source) {
-            source.postMessage({
-                type: 'PureCloud.Interaction.updateState',
-                data: { action: action,
-                    id: id
-                },
-            }, clientOrigin);
-        }
+        var id = component.get('v.interactionId');        
+        this.sendMessage(component, {
+            type: 'PureCloud.Interaction.updateState',
+            data: {
+                action: action,
+                id: id
+            }
+        });
     },
 
     outputToConsole: function(component, message) {
@@ -34,8 +28,7 @@
     },
 
     addAttributes: function(component) {
-        var clientOrigin = component.get('v.clientOrigin');
-        var source = component.get('v.postMessageSource');
+
         var id = component.get('v.interactionId');
         var attributesText = component.get('v.attributes');
         var attributes = {};
@@ -46,14 +39,12 @@
             console.log('Error parsing custom attributes: ' + JSON.stringify(e.message));
         }
 
-        if(source) {
-            source.postMessage({
-                type: 'PureCloud.Interaction.addCustomAttributes',
-                data: {
-                    attributes: attributes,
-                    id: id
-                },
-            }, clientOrigin);
-        }
+        this.sendMessage(component, {
+            type: 'PureCloud.Interaction.addCustomAttributes',
+            data: {
+                attributes: attributes,
+                id: id
+            }
+        });
     }
 })

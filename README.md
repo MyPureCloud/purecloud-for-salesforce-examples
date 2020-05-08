@@ -16,7 +16,7 @@ This repository contains various example applications for PureCloud for Salesfor
 * A Salesforce organization.
 * PureCloud for Salesforce installed in your Salesforce organization.
   For more information, see [Set up the PureCloud for Salesforce integration](https://help.mypurecloud.com/?p=39326).
-* Version 2.49 or later of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
+* For the Lightning Experience example code, use a version of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package that supports Lightning Message Service.
 
 ## Installation
 
