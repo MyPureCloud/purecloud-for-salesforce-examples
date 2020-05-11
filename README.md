@@ -1,6 +1,10 @@
 # PureCloud for Salesforce Examples
 This repository contains various example applications for PureCloud for Salesforce.
 
+# :warning: Warning
+The Lightning component code contained in this repository depends on Lightning Message Service (LMS), which is still a beta feature in Salesforce, and does not work in this example until the PureCloud for Salesforce managed package is updated and released with LMS support after Salesforce announces the general availability of LMS. Until then, use [the post message example branch](https://github.com/MyPureCloud/purecloud-for-salesforce-examples/tree/post-message-example) for a working example.
+(Note: This warning does not apply to the classic console example in this repository.)
+
 # Table of Contents
 
 * [Getting Started](#getting-started)

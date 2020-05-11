@@ -2,7 +2,7 @@
 This repository contains an example component that allows Salesforce Lightning Experience users to test PureCloud for Salesforce events in a Salesforce Lightning app.
 
 # :warning: Warning
-The example code contained in this repository utilizes Lightning Message Service, which is still a beta feature in Salesforce and is not available yet in released versions of the PureCloud for Salesforce managed package.
+The Lightning component code contained in this repository depends on Lightning Message Service (LMS), which is still a beta feature in Salesforce, and does not work in this example until the PureCloud for Salesforce managed package is updated and released with LMS support after Salesforce announces the general availability of LMS. Until then, use [the post message example branch](https://github.com/MyPureCloud/purecloud-for-salesforce-examples/tree/post-message-example) for a working example.
 
 # Table of Contents
 
