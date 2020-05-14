@@ -14,20 +14,14 @@ This repository contains an example component that allows Salesforce Classic use
 
 ## TL;DR
 
-1. Check the version of your PureCloud for Salesforce managed package.
-2. Create a Visualforce page with the example code in the repository.
-3. Use the example app to test PureCloud for Salesforce events.
+1. Create a Visualforce page with the example code in the repository.
+2. Use the example app to test PureCloud for Salesforce events.
 
 ## Prerequisites
 
-* Version 2.49 or later of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
+* The [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
 
 ## Installation
-
-### Check the Version of the Managed Package
-
-1. Check the version of your PureCloud for Salesforce managed package.
-2. If the managed package is not version 2.49 or later, update the managed package.
 
 ### Create a Visualforce Page
 

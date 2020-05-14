@@ -1,8 +1,12 @@
 # Events in Salesforce Lightning App
 This repository contains an example component that allows Salesforce Lightning Experience users to test PureCloud for Salesforce events in a Salesforce Lightning app.
 
-# :warning: Warning
-The Lightning component code contained in this repository depends on Lightning Message Service (LMS), which is still a beta feature in Salesforce, and does not work in this example until the PureCloud for Salesforce managed package is updated and released with LMS support after Salesforce announces the general availability of LMS. Until then, use [the post message example branch](https://github.com/MyPureCloud/purecloud-for-salesforce-examples/tree/post-message-example) for a working example.
+**Warning**: The Lightning component code contained in this repository depends on Lightning Message Service (LMS), which is currently a beta feature in Salesforce. The Lightning component code will not work in the Lightning Experience example until the following occurs:
+ 
+* Salesforce announces the general availability of LMS.
+* Genesys updates and releases the PureCloud for Salesforce managed package with LMS support.
+ 
+Until then, use the [post message example branch]( https://github.com/MyPureCloud/purecloud-for-salesforce-examples/tree/post-message-example/src/Lightning%20Experience/events-in-salesforce) for a working example.
 
 # Table of Contents
 
@@ -25,14 +29,15 @@ The Lightning component code contained in this repository depends on Lightning M
 
 ## Prerequisites
 
-* PureCloud for Salesforce installed in your Salesforce organization using a version of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package that supports Lightning Message Service.
+* Version of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package that supports Lightning Message Service.
+ 
 
 # Installation
 
 ### Check the Version of the Managed Package
 
 1. Check the version of your PureCloud for Salesforce managed package.
-2. If the managed package is not a version that supports Lightning Message Service, update the managed package.
+2. If the managed package does not support Lightning Message Service, update the managed package to a version that supports Lightning Message Service.
 
 ### Create a Lightning Component
 1. In the Developer Console, click **File** > **New** > **Lightning Component**.
