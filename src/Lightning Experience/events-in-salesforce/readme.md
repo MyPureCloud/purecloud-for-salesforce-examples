@@ -1,7 +1,7 @@
 # Events in Salesforce Lightning App
 This repository contains an example component that allows Salesforce Lightning Experience users to test PureCloud for Salesforce events in a Salesforce Lightning app.
 
-**Warning**: The Lightning component code contained in this repository depends on Lightning Message Service (LMS), which is currently a beta feature in Salesforce. The Lightning component code will not work in the Lightning Experience example until the following occurs:
+:warning: **Warning**: The Lightning component code contained in this repository depends on Lightning Message Service (LMS), which is currently a beta feature in Salesforce. The Lightning component code will not work in the Lightning Experience example until the following occurs:
  
 * Salesforce announces the general availability of LMS.
 * Genesys updates and releases the PureCloud for Salesforce managed package with LMS support.
