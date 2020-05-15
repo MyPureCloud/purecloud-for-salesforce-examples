@@ -1,39 +1,13 @@
 ({
-    initComponent: function(component, event, helper) {
-        var action = component.get("c.getCallCenterUrl");
-        action.setCallback(this, function(response) {
-            var state = response.getState();
-            if(state === 'SUCCESS') {
-                var returnedUrl = response.getReturnValue();
-                var clientOrigin = returnedUrl.match(/^(http(s?):\/\/[^\/]+)/gi)[0];
-                component.set('v.clientOrigin', clientOrigin);
-
-                window.addEventListener("message", $A.getCallback(function(event) {
-
-                    if(event.origin != clientOrigin) {
-                        return;
-                    }
-
-                    if(event.data && event.data.type) {
-
-                        if(event.source && event.data.type === 'Handshake') {
-                            var message = JSON.stringify(event.data);
-                            helper.outputToConsole(component, message);
-                            component.set('v.postMessageSource', event.source);
-                        }
-
-                        if(event.source && event.data.type === 'Interaction') {
-                            var message = JSON.stringify(event.data);
-                            helper.outputToConsole(component, message);
-                            if(event.data.data.id) {
-                                component.set("v.interactionId", event.data.data.id );
-                            }
-                        }
-                    }
-                }), false);
+    onClientEvent: function (component, message, helper) {
+        var eventData = message.getParams();
+        if (eventData) {
+            var message = JSON.stringify(eventData);
+            helper.outputToConsole(component, message);
+            if(eventData.type === 'Interaction' && eventData.data.id) {
+                component.set("v.interactionId", eventData.data.id );
             }
-        });
-        $A.enqueueAction(action);
+        }
     },
 
     statusBreak: function(component, event, helper) {

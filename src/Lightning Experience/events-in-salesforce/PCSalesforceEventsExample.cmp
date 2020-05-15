@@ -1,10 +1,9 @@
-<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="PCSalesforceEventsExampleController">
-    <aura:handler name="init" value="{!this}" action="{!c.initComponent}"/>
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
     <aura:attribute name="interactionId" type="String" />
     <aura:attribute name="attributes" type="String" />
-    <aura:attribute name="clientOrigin" type ="String" />
     <aura:attribute name="consoleMessages" type ="String" default=""/>
-    <aura:attribute name="postMessageSource" type = "Object" />
+    <lightning:messageChannel type="purecloud__ClientEvent__c" aura:id="clientEventMessageChannel" onMessage="{!c.onClientEvent}" scope="APPLICATION"/>
+
     <div>
         <ui:inputText label="Interaction Id: " class="field" value="{!v.interactionId}" updateOn="change"/>
         <div class="button-set">

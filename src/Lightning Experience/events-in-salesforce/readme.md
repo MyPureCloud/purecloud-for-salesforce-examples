@@ -1,6 +1,13 @@
 # Events in Salesforce Lightning App
 This repository contains an example component that allows Salesforce Lightning Experience users to test PureCloud for Salesforce events in a Salesforce Lightning app.
 
+:warning: **Warning**: The Lightning component code contained in this repository depends on Lightning Message Service (LMS), which is currently a beta feature in Salesforce. The Lightning component code will not work in the Lightning Experience example until the following occurs:
+ 
+* Salesforce announces the general availability of LMS.
+* Genesys updates and releases the PureCloud for Salesforce managed package with LMS support.
+ 
+Until then, use the [post message example branch]( https://github.com/MyPureCloud/purecloud-for-salesforce-examples/tree/post-message-example/src/Lightning%20Experience/events-in-salesforce) for a working example.
+
 # Table of Contents
 
 * [Getting Started](#getting-started)
@@ -22,21 +29,15 @@ This repository contains an example component that allows Salesforce Lightning E
 
 ## Prerequisites
 
-* Version 2.49 or later of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
+* Version of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package that supports Lightning Message Service.
+ 
 
 # Installation
 
 ### Check the Version of the Managed Package
 
 1. Check the version of your PureCloud for Salesforce managed package.
-2. If the managed package is not version 2.49 or later, update the managed package.
-
-### Create an Apex Class
-
-1. In Salesforce Lightning Experience, open **Developer Console**.
-2. Click **File** > **New** > **Apex Class**.
-3. Enter a name for your Apex class and click **OK**.
-4. Copy the contents of **PCSalesforceExampleController.apxc** in the repository to your file and then save the file.
+2. If the managed package does not support Lightning Message Service, update the managed package to a version that supports Lightning Message Service.
 
 ### Create a Lightning Component
 1. In the Developer Console, click **File** > **New** > **Lightning Component**.
