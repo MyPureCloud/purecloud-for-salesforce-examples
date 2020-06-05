@@ -11,7 +11,7 @@ This repository contains examples for the Genesys Cloud for Salesforce SDK REST 
 
 Contains static methods to expose Genesys Cloud API.
 
-You can access the REST API through the REST class under the purecloud.SDK.REST namespace. The methods we expose are get, put, post, and delete. Currently, we are unable to support patch through the salesforce Apex API.
+You can access the REST API through the REST class under the purecloud.SDK.REST namespace. The methods we expose are get, put, post, and delete. Currently, we are unable to support patch through the Salesforce Apex API.
 
 ## Namespace
 
