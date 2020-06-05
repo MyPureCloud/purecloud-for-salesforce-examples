@@ -24,7 +24,9 @@ These methods are designed to provide more flexibility for the Genesys Cloud for
 ## Example 1
 
 This example shows how to do the following action:
-    * Get a user profile from Genesys Cloud
+* Get a user profile from Genesys Cloud
+
+Apex Code:
 
     HttpResponse response = purecloud.SDK.Rest.get('/platform/api/v2/users/0c2b31d0-9f8b-4328-97f2-50ffe98bee50/profile');
 
@@ -52,10 +54,12 @@ Example response:
 ## Example 2
 
 This example shows how to do the following actions:
-    * Route a Salesforce email to a specified queue.
-    * Screen pop a specified Salesforce page using the attributes property.
+* Route a Salesforce email to a specified queue.
+* Screen pop a specified Salesforce page using the attributes property.
 
 ![Resulting Action](/assets/images/email-example.png)
+
+Apex Code:
 
     Map<String, Object> payload = new Map<String, Object>();
     payload.put('queueId', '8897431f-99d9-4cfe-b098-d279c7776a49');
@@ -74,10 +78,12 @@ Example Response:
 ## Example 3
 
 This example shows how to do the following actions:
-    * create a callback with username and callback number.
-    * route a callback to a specified queue
+* create a callback with username and callback number.
+* route a callback to a specified queue
 
 ![Resulting Action](/assets/images/callback-example.png)
+
+Apex Code:
 
     Map<String, Object> payload = new Map<String, Object>();
     payload.put('callbackNumbers', new List<String> { '+13172222222' });
