@@ -57,7 +57,7 @@ This example shows how to do the following actions:
 * Route a Salesforce email to a specified queue.
 * Screen pop a specified Salesforce page using the attributes property.
 
-![Resulting Action](/assets/images/email-example.png)
+![Resulting Action](https://github.com/MyPureCloud/purecloud-for-salesforce-examples/blob/sdk-rest-api-examples/src/SDK/sdk-rest-examples/assets/img/email-example.png)
 
 Apex Code:
 
@@ -81,7 +81,7 @@ This example shows how to do the following actions:
 * create a callback with username and callback number.
 * route a callback to a specified queue
 
-![Resulting Action](/assets/images/callback-example.png)
+![Resulting Action](https://github.com/MyPureCloud/purecloud-for-salesforce-examples/blob/sdk-rest-api-examples/src/SDK/sdk-rest-examples/assets/img/callback-example.png)
 
 Apex Code:
 
