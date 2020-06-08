@@ -67,6 +67,16 @@ Apex Code:
     payload.put('attributes', new Map<String, String>{ 'SF_URLPop' => '00336000003QVQm'}); 
     HttpResponse response = purecloud.SDK.REST.post('/platform/api/v2/conversations/emails', JSON.serialize(payload));
 
+Resulting Payload:
+
+    {
+        "queueId": "8897431f-99d9-4cfe-b098-d279c7776a49",
+        "provider": "Salesforce",
+        "attributes": {
+            "SF_URLPop": "00336000003QVQm"
+        }
+    }
+
 Example Response:
 
     {
@@ -90,6 +100,16 @@ Apex Code:
     payload.put('callbackUserName', 'John Doe');
     payload.put('routingData', new Map<String, String>{'queueId' => '8897431f-99d9-4cfe-b098-d279c7776a49'});
     HttpResponse response = purecloud.SDK.REST.post('/platform/api/v2/conversations/callbacks', JSON.serialize(payload));
+
+Resulting payload:
+
+    {
+        "callbackNumbers":["+13172222222"],
+        "callbackUserName": "John Doe", 
+        "routingData":{
+            "queueId":"8897431f-99d9-4cfe-b098-d279c7776a49"
+        }
+    }
 
 Example Response:
 
