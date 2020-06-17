@@ -172,6 +172,6 @@ HttpResponse response = purecloud.SDK.REST.post('/platform/api/v2/conversations/
 
 ## Additional Information
 
-This content is [licensed](src/LICENSE) under the MIT license.
+This content is [licensed](/LICENSE) under the MIT license.
 
 For more information about Genesys Cloud for Salesforce, see [About Genesys Cloud for Salesforce (Resource Center)](https://help.mypurecloud.com/?p=65221).
