@@ -86,6 +86,6 @@ For more information, see [Events in Salesforce (Resource Center)](https://help.
 
 # Additional Information
 
-This content is [licensed](LICENSE) under the MIT license.
+This content is [licensed](/LICENSE) under the MIT license.
 
 For more information about PureCloud for Salesforce, see [About PureCloud for Salesforce (Resource Center)](https://help.mypurecloud.com/?p=65221).
