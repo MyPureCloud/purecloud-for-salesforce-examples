@@ -9,7 +9,7 @@ This repository contains examples for the Genesys Cloud for Salesforce SDK Open 
   * [CTI-Extensions](#cti-extensions)
   * [Interfaces](#interfaces)
   * [Usage](#usage)
-  * [Example 1](#example)
+  * [Example](#example)
 * [Additional Information](#additional-information)
 
 
