@@ -6,10 +6,10 @@ This repository contains examples for the Genesys Cloud for Salesforce SDK Open 
 
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [REST Class](#rest-class)
+  * [CTI-Extensions](#cti-extensions)
   * [Interfaces](#interfaces)
   * [Usage](#usage)
-  * [Example 1](#example-1)
+  * [Example 1](#example)
 * [Additional Information](#additional-information)
 
 
@@ -39,7 +39,7 @@ You can use the CTI Extensions by implementing the appropriate interfaces and se
 Use these interfaces to add your own functionality to Salesforce Open CTI methods
 
 
-## Example: Setting a Task Record Type Id on SaveLog
+## Example
 
 This example shows how to do the following actions:
 
