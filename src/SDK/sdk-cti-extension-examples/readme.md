@@ -18,12 +18,12 @@ This repository contains examples for the Genesys Cloud for Salesforce SDK Open 
 ## Prerequisites
 
 * The [Genesys Cloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
-* [Record Types](https://help.salesforce.com/articleView?id=customize_recordtype.htm&type=5) must be created in your Salesforce organization
+* [Record Types](https://help.salesforce.com/articleView?id=customize_recordtype.htm&type=5) must be created in your Salesforce organization.
 
 
 ## CTI Extensions
 
-A set of interfaces that allow developers to extend specific Salesforce Open CTI methods with the Genesys Cloud for Salesforce integration
+A set of interfaces that allow developers to extend specific Salesforce Open CTI methods with the Genesys Cloud for Salesforce integration.
 
 You can use the CTI Extensions by implementing the appropriate interfaces and selecting your class in the Salesforce package settings. 
 
@@ -36,7 +36,7 @@ You can use the CTI Extensions by implementing the appropriate interfaces and se
 
 ## Usage
 
-Use these interfaces to add your own functionality to Salesforce Open CTI methods
+Use these interfaces to add your own functionality to Salesforce Open CTI methods.
 
 
 ## Example
