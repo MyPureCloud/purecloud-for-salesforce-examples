@@ -18,7 +18,6 @@ This repository contains examples for the Genesys Cloud for Salesforce SDK Open 
 ## Prerequisites
 
 * The [Genesys Cloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
-* [Record Types](https://help.salesforce.com/articleView?id=customize_recordtype.htm&type=5) must be created in your Salesforce organization.
 
 
 ## CTI Extensions
@@ -43,6 +42,8 @@ Use these interfaces to add your own functionality to Salesforce Open CTI method
 
 This example shows how to do the following actions:
 
+Note: This example assumes [Record Types](https://help.salesforce.com/articleView?id=customize_recordtype.htm&type=5) have been created in your Salesforce organization.
+
 * Get an interaction from event data
 * Get a list of Record Types 
 * Create a task from event data
@@ -52,7 +53,7 @@ This example shows how to do the following actions:
 ### Apex Code
 
 ```
-global with sharing class CustomCTIExtensions implements pcdevpackageorg.CTIExtension.SaveLog 
+global with sharing class CustomCTIExtensions implements purecloud.CTIExtension.SaveLog 
 {
 
     public String onSaveLog(String data) {
