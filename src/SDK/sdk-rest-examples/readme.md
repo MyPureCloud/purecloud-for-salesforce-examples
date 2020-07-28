@@ -1,12 +1,12 @@
 # Genesys Cloud for Salesforce SDK Examples
-This repository contains examples for the Genesys Cloud for Salesforce SDK REST client.
+This repository contains examples for the Genesys Cloud for Salesforce SDK Rest client.
 
 
 # Table of Contents
 
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [REST Class](#rest-class)
+  * [Rest Class](#rest-class)
   * [Namespace](#namespace)
   * [Usage](#usage)
   * [Example 1](#example-1)
@@ -23,11 +23,11 @@ This repository contains examples for the Genesys Cloud for Salesforce SDK REST 
 * [Authentication](https://help.mypurecloud.com/?p=129103) configured in the Genesys Cloud for Salesforce package.
 
 
-## REST Class
+## Rest Class
 
 Contains static methods that expose the Genesys Cloud API.
 
-You can access the REST API through the REST class under the purecloud.SDK.REST namespace. We expose the GET, PUT, POST, and DELETE methods. Currently, we are unable to support the PATCH method through the Salesforce Apex API.
+You can access the Rest API through the Rest class under the purecloud.SDK.Rest namespace. We expose the GET, PUT, POST, and DELETE methods. Currently, we are unable to support the PATCH method through the Salesforce Apex API.
 
 
 ## Namespace
@@ -92,7 +92,7 @@ Map<String, Object> payload = new Map<String, Object>();
 payload.put('queueId', '8897431f-99d9-4cfe-b098-d279c7776a49');
 payload.put('provider', 'Salesforce');
 payload.put('attributes', new Map<String, String>{ 'SF_URLPop' => '00336000003QVQm'});
-HttpResponse response = purecloud.SDK.REST.post('/platform/api/v2/conversations/emails', JSON.serialize(payload));
+HttpResponse response = purecloud.SDK.Rest.post('/platform/api/v2/conversations/emails', JSON.serialize(payload));
 ```
 
 ### Resulting Payload
@@ -133,7 +133,7 @@ Map<String, Object> payload = new Map<String, Object>();
 payload.put('callbackNumbers', new List<String> { '+13172222222' });
 payload.put('callbackUserName', 'John Smith');
 payload.put('routingData', new Map<String, String>{'queueId' => '8897431f-99d9-4cfe-b098-d279c7776a49'});
-HttpResponse response = purecloud.SDK.REST.post('/platform/api/v2/conversations/callbacks', JSON.serialize(payload));
+HttpResponse response = purecloud.SDK.Rest.post('/platform/api/v2/conversations/callbacks', JSON.serialize(payload));
 ```
 
 ### Resulting Payload
