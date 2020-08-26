@@ -49,10 +49,10 @@ Starting in your Genesys Cloud organization we'll create a DNC list. Genesys Clo
 8. Click **Browse**. Select a .csv file. Then click **Open**. The screen displays the first few rows of data. An example .csv file has been provided in `assets/data/do-not-call.csv`.
 9. From the **DNC List Numbers** box, select DNC phone number columns.
     
-    ![Figure shows how to select phone number columns from a  list of columns in a csv file.](./assets/img/dnc_list_numbers.png)
+    ![Figure shows how to select phone number columns from a  list of columns in a csv file.](https://github.com/MyPureCloud/purecloud-for-salesforce-examples/blob/942b188b33e967e5d82cb7170af3207796c4ea8f/src/SDK/sdk-dnclist-example/assets/img/dnc_list_numbers.png?raw=true)
 10. Click **Save**.
 
-    ![Figure shows completed DNC entry ready to save.](./assets/img/example_new_dnc_entry.png)
+    ![Figure shows completed DNC entry ready to save.](https://raw.githubusercontent.com/MyPureCloud/purecloud-for-salesforce-examples/942b188b33e967e5d82cb7170af3207796c4ea8f/src/SDK/sdk-dnclist-example/assets/img/example_new_dnc_entry.png)
 
 > For more detailed instructions on creating a DNC list in Genesys Cloud, see [Create a new internal DNC list](https://help.mypurecloud.com/articles/create-new-dnc-list/) documentation.
 
@@ -174,7 +174,7 @@ Though not needed for this particular example, you will need to assign users to 
 11. To add the checkbox to all layouts, we'll click the page layout named **Contact Layout**.
 12. Scroll down to the **Contact Information** section and drag the **Do Not Call** button down into the that section.
 
-![alt text](./assets/img/contact_do-not-call.gif)
+![alt text](https://raw.githubusercontent.com/MyPureCloud/purecloud-for-salesforce-examples/942b188b33e967e5d82cb7170af3207796c4ea8f/src/SDK/sdk-dnclist-example/assets/img/contact_do-not-call.gif)
 
 You should now see a checkbox labeled **Do Not Call** when creating and editing Contacts in Salesforce.
 
