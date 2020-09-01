@@ -28,7 +28,7 @@ This solution requires a Salesforce instance with the Genesys Cloud for Salesfor
 
 The solutions engineer requires a Salesforce account with the [System Administrator Profile](https://help.salesforce.com/articleView?id=standard_profiles.htm&type=5 "Opens the Standard Profiles article").
 
-# Deployment Steps
+# Deployment steps
 - [Create a Do-Not-Call List in Genesys Cloud](#create-a-do-not-call-list-in-genesys-cloud)
 - [Add a Custom Setting for the DNC List](#add-a-custom-setting-for-the-dnc-list)
 - [Enable the "Do Not Call" Field in Salesforce](#enable-the-do-not-call-field-in-salesforce)
