@@ -29,9 +29,6 @@ This solution requires a Salesforce instance with the Genesys Cloud for Salesfor
 The solutions engineer requires a Salesforce account with the [System Administrator Profile](https://help.salesforce.com/articleView?id=standard_profiles.htm&type=5 "Opens the Standard Profiles article").
 
 # Deployment Steps
-- [Specialized knowledge](#specialized-knowledge)
-- [Genesys Cloud requirements](#genesys-cloud-requirements)
-- [Salesforce requirements](#salesforce-requirements)
 - [Create a Do-Not-Call List in Genesys Cloud](#create-a-do-not-call-list-in-genesys-cloud)
 - [Add a Custom Setting for the DNC List](#add-a-custom-setting-for-the-dnc-list)
 - [Enable the "Do Not Call" Field in Salesforce](#enable-the-do-not-call-field-in-salesforce)
@@ -39,10 +36,7 @@ The solutions engineer requires a Salesforce account with the [System Administra
   - [Create the Contact Trigger in Salesforce](#create-the-contact-trigger-in-salesforce)
   - [Create the DoNotCallManager Class in Salesforce](#create-the-donotcallmanager-class-in-salesforce)
   - [Call the Genesys Cloud API](#call-the-genesys-cloud-api)
-    - [Apex code](#apex-code)
 - [Test your work](#test-your-work)
-- [Troubleshooting](#troubleshooting)
-- [Additional resources](#additional-resources)
 
 ## Create a Do-Not-Call List in Genesys Cloud
 
@@ -58,11 +52,17 @@ Starting in your Genesys Cloud organization, create a DNC list. Genesys Cloud of
 
 Rather than hardcode the DNC list ID, this solution uses a Custom Setting/Custom Field combination to store the ID. To add the DNC list ID to the Custom Setting, do the following:
 
-* Create a Custom Setting called **PureCloud_DNC_List**
-* Add a Custom Field to the Custom Setting named **DNC_List_Id**
-* Populate the **DNC_List_Id** Custom Field with the ID of the DNC list from the previous step
+* Create a Custom Setting with an **Object Name** of **PureCloud_DNC_List** and a Setting Type of **List**. For more information, see [Create Custom Settings](https://help.salesforce.com/articleView?id=cs_about.htm&type=5 "Opens the Create Custom Settings article").
+* Add a Custom Field to the Custom Setting with a **Data Type** of Text and a **Field Name** of **DNC_List_Id**. The field should allow for at least 36 characters. For more information, see [Add Custom Settings Fields](https://help.salesforce.com/articleView?id=cs_add_fields.htm&type=5 "Opens the Add Custom Settings Fields article").
 
-For more information on creating Custom Settings and Custom Fields, see [Create Custom Settings](https://help.salesforce.com/articleView?id=cs_about.htm&type=5 "Opens the Create Custom Settings article") and [Add Custom Settings Fields](https://help.salesforce.com/articleView?id=cs_add_fields.htm&type=5 "Opens the Add Custom Settings Fields article").
+After creating the Custom Setting and Custom Field, set the **DNC_List_Id** value to the ID of your DNC list ID by completing the following:
+
+1. Click **Setup**.
+2. In the **Quick Find**, type "Custom Settings" to filter the list.
+3. Click the **Custom Settings** object.
+4. Find **PureCloud_DNC_List** and click the **Manage** button next to the the Label.
+5. Click the **New** button.
+6. Enter **DNC_List_Id** for the Name and paste your DNC list ID in the **DNC_List_Id** field.
 
 ## Enable the "Do Not Call" Field in Salesforce
 
