@@ -55,7 +55,7 @@ Rather than hardcode the DNC list ID, this solution uses a Custom Setting/Custom
 * Create a Custom Setting with an **Object Name** of **PureCloud_DNC_List** and a Setting Type of **List**. For more information, see [Create Custom Settings](https://help.salesforce.com/articleView?id=cs_about.htm&type=5 "Opens the Create Custom Settings article").
 * Add a Custom Field to the Custom Setting with a **Data Type** of Text and a **Field Name** of **DNC_List_Id**. The field should allow for at least 36 characters. For more information, see [Add Custom Settings Fields](https://help.salesforce.com/articleView?id=cs_add_fields.htm&type=5 "Opens the Add Custom Settings Fields article").
 
-After creating the Custom Setting and Custom Field, set the **DNC_List_Id** value to the ID of your DNC list ID by completing the following:
+After creating the Custom Setting and Custom Field, set the **DNC_List_Id** value to the ID of your DNC list by completing the following:
 
 1. Click **Setup**.
 2. In the **Quick Find**, type "Custom Settings" to filter the list.
@@ -63,6 +63,7 @@ After creating the Custom Setting and Custom Field, set the **DNC_List_Id** valu
 4. Find **PureCloud_DNC_List** and click the **Manage** button next to the the Label.
 5. Click the **New** button.
 6. Enter **DNC_List_Id** for the Name and paste your DNC list ID in the **DNC_List_Id** field.
+7. Click **Save**.
 
 ## Enable the "Do Not Call" Field in Salesforce
 
@@ -70,7 +71,7 @@ Next, enable the existing **Do Not Call** field in Salesforce. This field is hid
 
 1. Click **Setup**.
 2. Click **Object Manager** (not the menu arrow) to get a list of Salesforce objects.
-3. In the **Quick Find**, type "Contact" to filter the list.
+3. In the Object Manager **Quick Find**, type "Contact" to filter the list.
 4. Click the **Contact** object.
 5. Click **Fields & Relationships** from the menu on the left-hand side.
 6. Find **Do Not Call** and click it.
@@ -78,8 +79,9 @@ Next, enable the existing **Do Not Call** field in Salesforce. This field is hid
 8. Under the **Visible** column, select the security profiles for which you'd like to show the field.
 9. Click the **Save** button.
 10. Next, click on **Page Layouts** in the left-hand menu.
-11. To add the checkbox to all layouts, click the page layout named **Contact Layout**.
+11. To add the checkbox to all layouts, click the Page Layout named **Contact Layout**.
 12. Scroll down to the **Contact Information** section and drag the **Do Not Call** button down into that section.
+13. Click **Save** in the top left.
 
 ![Dragging Do Not Call field into Contact Information section](/src/SDK/sdk-dnclist-example/assets/img/contact-do-not-call.gif)
 
@@ -107,17 +109,17 @@ We'll be making use of the `isUpdate`, `isInsert`, `isBefore` and `isAfter` Cont
 
 ### Call the Genesys Cloud API
 
-The Genesys Cloud Platform API call is made in the `addPhoneNumber` method of the `DoNotCallManager` class. This method calls an endpoint in the [Outbound API Resource](https://developer.mypurecloud.com/api/rest/v2/outbound/#post-api-v2-outbound-conversations--conversationId--dnc "Opens the Outbound API Resource article") using the SDK. This endpoint adds a phone number to a DNC list via a POST request to `/api/v2/outbound/conversations/{conversationId}/dnc`. In this solution, we're adding a single phone number at a time, but this endpoint can handle multiple phone numbers in a single request.
+The Genesys Cloud Platform API call is made in the `addPhoneNumber` method of the `DoNotCallManager` class. This method calls an endpoint in the [Outbound API Resource](https://developer.mypurecloud.com/api/rest/v2/outbound/#post-api-v2-outbound-dnclists--dncListId--phonenumbers "Opens the Outbound API Resource article") using the SDK. This endpoint adds a phone number to a DNC list via a POST request to `/api/v2/outbound/dnclists/{dncListId}/phonenumbers`. In this solution, only a single phone number is added per request, but this endpoint can handle multiple phone numbers in a single request.
 
 #### Apex code
 
-This is a simplified example of the SDK request based on the `DoNotCallManager` class. 
+This is a simplified example of the SDK request based on the `DoNotCallManager` class. The `post` method of the SDK is used to send a request containing an array of phone numbers to the API endpoint.
 
 ```
 String payload = JSON.serialize(new List<String>{ phoneNumber });
 
 HttpResponse response = purecloud.SDK.Rest.post(
-'/api/v2/outbound/conversations/{conversationId}/dnc', payload );
+'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', payload );
 ```
 
 ## Test your work
