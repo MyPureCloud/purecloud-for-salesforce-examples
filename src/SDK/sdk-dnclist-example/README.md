@@ -51,34 +51,34 @@ The solutions engineer must have a System Administrator profile. For more inform
 
 1. In your Genesys Cloud organization, create an internal DNC list.
 
-  The **assests/data/** folder contains an example .csv file that you use. For more information, see [Create a new internal DNC list](https://help.mypurecloud.com/?p=4107 "Opens the Create a new internal DNC list article").
+    The **assests/data/** folder contains an example .csv file that you use. For more information, see [Create a new internal DNC list](https://help.mypurecloud.com/?p=4107 "Opens the Create a new internal DNC list article").
 
 2. Copy and save the ID of the DNC list.
 
-  You will use this ID after you create a custom field. See the [Create a custom setting in Salesforce](#create-a-custom-setting-in-salesforce) section.
+    You will use this ID after you create a custom field. See the [Create a custom setting in Salesforce](#create-a-custom-setting-in-salesforce) section.
 
-  ![Copy DNC list ID from URL](/src/SDK/sdk-dnclist-example/assets/img/copy-dnc-list-id.gif)
+    ![Copy DNC list ID from URL](/src/SDK/sdk-dnclist-example/assets/img/copy-dnc-list-id.gif)
 
 ## Create a custom setting in Salesforce
 
 Use a custom setting to store the ID of the DNC list.
 
 1. Create a custom setting with following values:
-  >**Note**: If **Setting Type** is grayed out, enable **Manage List Custom Settings Type**. For more information, see [List Custom Setting is greyed out](https://help.salesforce.com/articleView?id=000317370&language=en_US&type=1&mode=1 "Opens List Custom Setting is greyed out in the Salesforce documentation") in the Salesforce documentation.
+    >**Note**: If **Setting Type** is grayed out, enable **Manage List Custom Settings Type**. For more information, see [List Custom Setting is greyed out](https://help.salesforce.com/articleView?id=000317370&language=en_US&type=1&mode=1 "Opens List Custom Setting is greyed out in the Salesforce documentation") in the Salesforce documentation.
 
-  * **Object Name**: PureCloud_DNC_List
-  * **Setting Type**: List
+    * **Object Name**: PureCloud_DNC_List
+    * **Setting Type**: List
 
-  For more information, see [Create Custom Settings](https://help.salesforce.com/articleView?id=cs_about.htm&type=5 "Opens Create Custom Settings in the Salesforce documentation") in the Salesforce documentation.
+    For more information, see [Create Custom Settings](https://help.salesforce.com/articleView?id=cs_about.htm&type=5 "Opens Create Custom Settings in the Salesforce documentation") in the Salesforce documentation.
 
 2. Add a custom field to the custom setting with the following values:
->**Note**: **Length** must be 36 or greater.
+  >**Note**: **Length** must be 36 or greater.
 
-  * **Data Type**: Text
-  * **Length**: 36
-  * **Field Name**: DNC_List_Id
+    * **Data Type**: Text
+    * **Length**: 36
+    * **Field Name**: DNC_List_Id
 
-  For more information, see [Add Custom Settings Fields](https://help.salesforce.com/articleView?id=cs_add_fields.htm&type=5 "Opens Add Custom Settings Fields in the Salesforce documentation") in the Salesforce documentation.
+    For more information, see [Add Custom Settings Fields](https://help.salesforce.com/articleView?id=cs_add_fields.htm&type=5 "Opens Add Custom Settings Fields in the Salesforce documentation") in the Salesforce documentation.
 
 3. Add the ID of the DNC list to the custom field.
 
