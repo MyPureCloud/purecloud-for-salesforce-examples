@@ -72,7 +72,7 @@ Use a custom setting to store the ID of the DNC list.
     For more information, see [Create Custom Settings](https://help.salesforce.com/articleView?id=cs_about.htm&type=5 "Opens Create Custom Settings in the Salesforce documentation") in the Salesforce documentation.
 
 2. Add a custom field to the custom setting with the following values:
-  >**Note**: **Length** must be 36 or greater.
+    >**Note**: **Length** must be 36 or greater.
 
     * **Data Type**: Text
     * **Length**: 36
