@@ -42,7 +42,7 @@ The solutions engineer must have a System Administrator profile. For more inform
 - [Create an internal DNC list in Genesys Cloud](#create-an-internal-dnc-list-in-genesys-cloud)
 - [Create a custom setting in Salesforce](#create-a-custom-setting-in-salesforce)
 - [Configure the Do Not Call field in Salesforce](#configure-the-do-not-call-field-in-salesforce)
-- [Create the Apex trigger and class](#create-the-apex-trigger-and-class)
+- [Create an Apex trigger and class](#create-an-apex-trigger-and-class)
   - [Create the DoNotCallManager class in Salesforce](#create-the-donotcallmanager-class-in-salesforce)
   - [Create the Contact trigger in Salesforce](#create-the-contact-trigger-in-salesforce)
 - [Test your work](#test-your-work)
@@ -52,6 +52,7 @@ The solutions engineer must have a System Administrator profile. For more inform
 1. In your Genesys Cloud organization, create an internal DNC list.
 
   The **assests/data/** folder contains an example .csv file that you use. For more information, see [Create a new internal DNC list](https://help.mypurecloud.com/?p=4107 "Opens the Create a new internal DNC list article").
+
 2. Copy and save the ID of the DNC list.
 
   You will use this ID after you create a custom field. See the [Create a custom setting in Salesforce](#create-a-custom-setting-in-salesforce) section.
@@ -69,6 +70,7 @@ Use a custom setting to store the ID of the DNC list.
   * **Setting Type**: List
 
   For more information, see [Create Custom Settings](https://help.salesforce.com/articleView?id=cs_about.htm&type=5 "Opens Create Custom Settings in the Salesforce documentation") in the Salesforce documentation.
+
 2. Add a custom field to the custom setting with the following values:
 >**Note**: **Length** must be 36 or greater.
 
@@ -77,21 +79,22 @@ Use a custom setting to store the ID of the DNC list.
   * **Field Name**: DNC_List_Id
 
   For more information, see [Add Custom Settings Fields](https://help.salesforce.com/articleView?id=cs_add_fields.htm&type=5 "Opens Add Custom Settings Fields in the Salesforce documentation") in the Salesforce documentation.
+
 3. Add the ID of the DNC list to the custom field.
 
-  a. Click **Setup**.
+    a. Click **Setup**.
 
-  b. Search for and click **Custom Settings**.
+    b. Search for and click **Custom Settings**.
 
-  c. Click **Manage** next to PureCloud_DNC_List. This is the custom setting that you created in step 1.
+    c. Click **Manage** next to PureCloud_DNC_List. This is the custom setting that you created in step 1.
 
-  d. Click **New**.
+    d. Click **New**.
 
-  e. For **Name**, enter **DNC_List_Id**.
+    e. For **Name**, enter **DNC_List_Id**.
 
-  f. For **DNC_List_Id**, enter the ID of the DNC list that you copied and saved earlier. See the [Create an internal DNC list in Genesys Cloud](#create-an-internal-dnc-list-in-genesys-cloud "Goes to the Create an internal DNC list in Genesys Cloud section") section.
+    f. For **DNC_List_Id**, enter the ID of the DNC list that you copied and saved earlier. See the [Create an internal DNC list in Genesys Cloud](#create-an-internal-dnc-list-in-genesys-cloud "Goes to the Create an internal DNC list in Genesys Cloud section") section.
 
-  g. Click **Save**.
+    g. Click **Save**.
 
 ## Configure the Do Not Call field in Salesforce
 
@@ -99,25 +102,25 @@ This field is hidden by default. You must make the field visible to profiles and
 
 1. Set **Field-Level Security** for the **Do Not Call** field to **Visible**.
 
-  a. Find the Contact field called **Do Not Call**.
+    a. Find the Contact field called **Do Not Call**.
 
-  b. Click **Set Field-Level Security**.
+    b. Click **Set Field-Level Security**.
 
-  c. Under **Visible**, select the profiles that you want to be able to see the **Do Not Call** field.
+    c. Under **Visible**, select the profiles that you want to be able to see the **Do Not Call** field.
 
-  d. Click **Save**.
+    d. Click **Save**.
 
-  For more information, see [Set Field-Level Security for a Single Field on All Profiles](https://help.salesforce.com/articleView?id=users_fields_fls.htm&type=5 "Opens Set Field-Level Security for a Single Field on All Profiles in the Salesforce documentation") in the Salesforce documentation.
+    For more information, see [Set Field-Level Security for a Single Field on All Profiles](https://help.salesforce.com/articleView?id=users_fields_fls.htm&type=5 "Opens Set Field-Level Security for a Single Field on All Profiles in the Salesforce documentation") in the Salesforce documentation.
 
 2. Add **Do Not Call** to **Contact Layout**.
 
-  a. Open the page layout for Contacts.
+    a. Open the page layout for Contacts.
 
-  b. Drag the **Do Not Call** field to the **Contact Information** section.
+    b. Drag the **Do Not Call** field to the **Contact Information** section.
 
-  c. Click **Save**.
+    c. Click **Save**.
 
-  For more information, see [Page Layouts](https://help.salesforce.com/articleView?id=customize_layout.htm&type=5 "Opens Page Layouts in the Salesforce documentation") in the Salesforce documentation.
+    For more information, see [Page Layouts](https://help.salesforce.com/articleView?id=customize_layout.htm&type=5 "Opens Page Layouts in the Salesforce documentation") in the Salesforce documentation.
 
 ![Drag Do Not Call field into Contact Information section](/src/SDK/sdk-dnclist-example/assets/img/contact-do-not-call.gif)
 
