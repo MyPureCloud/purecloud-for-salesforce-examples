@@ -122,9 +122,9 @@ This field is hidden by default. You must make the field visible to profiles and
 
     For more information, see [Page Layouts](https://help.salesforce.com/articleView?id=customize_layout.htm&type=5 "Opens Page Layouts in the Salesforce documentation") in the Salesforce documentation.
 
-  ![Drag Do Not Call field into Contact Information section](/src/SDK/sdk-dnclist-example/assets/img/contact-do-not-call.gif)
+    ![Drag Do Not Call field into Contact Information section](/src/SDK/sdk-dnclist-example/assets/img/contact-do-not-call.gif)
 
-  A **Do Not Call** check box now appears on all Contact records in Salesforce for the profiles that you selected.
+    A **Do Not Call** check box now appears on all Contact records in Salesforce for the profiles that you selected.
 
 
 ## Create an Apex trigger and class
