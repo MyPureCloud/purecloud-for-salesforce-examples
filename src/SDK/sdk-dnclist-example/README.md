@@ -51,7 +51,7 @@ The solutions engineer must have a System Administrator profile. For more inform
 
 1. In your Genesys Cloud organization, create an internal DNC list.
 
-    The **assests/data/** folder contains an example .csv file that you use. For more information, see [Create a new internal DNC list](https://help.mypurecloud.com/?p=4107 "Opens the Create a new internal DNC list article").
+    The **assets/data/** folder contains an example .csv file that you use. For more information, see [Create a new internal DNC list](https://help.mypurecloud.com/?p=4107 "Opens the Create a new internal DNC list article").
 
 2. Copy and save the ID of the DNC list.
 
