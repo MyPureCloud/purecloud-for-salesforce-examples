@@ -4,6 +4,8 @@ This Genesys Cloud Blueprint illustrates how to use the Genesys Cloud for Salesf
 
 This blueprint is fully functional, but outlines a simple implementation. For a more robust implementation, you can modify it to handle multiple phone number fields (home, mobile, other) or change the code to handle bulk insert and update operations. For more information, see the [Additional resources](#additional-resources "Goes to the Additional resources section") section.
 
+![Update Genesys Cloud DNC list with Genesys Cloud SDK workflow diagram](/src/SDK/sdk-dnclist-example/assets/img/update_genesyscloud_dnclist_with_genesyscloud_slf_sdk_workflow_diagram.png)
+
 **Solution components**:
 
 * **Genesys Cloud**: The Genesys cloud-based contact center platform. You create and manage DNC lists in Genesys Cloud.
