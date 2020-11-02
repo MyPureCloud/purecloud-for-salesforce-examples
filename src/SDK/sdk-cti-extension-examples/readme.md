@@ -31,12 +31,12 @@ To use the CTI extensions, implement one or more interfaces in an Apex class and
 
 ## Example
 
-This example uses the `purecloud.CTIExtension.saveLog` interface to save a diagnostic log to a record type. The example performs the following actions:
+This example uses the `purecloud.CTIExtension.saveLog` interface to save an interaction log to a record type. The example performs the following actions:
 
-* Gets an interaction from event data.
-* Gets a list of record types.
-* Creates a task from event data.
-* Assigns a record type to a task.
+* Gets an interaction and an interaction log from event data.
+* Instantiates a new or an existing Task object based on the interaction log.
+* If the interaction is outbound, sets a record type on the Task object.
+* Saves the Task object and returns its ID.
 
 To implement the example, follow these steps.
 
