@@ -4,7 +4,7 @@ public with sharing class DoNotCallManager {
   public static Boolean bypassTrigger = false;
 
   public static String getDNCListId() {
-    PureCloud_DNC_List__c dncListSettings = PureCloud_DNC_List__c.getValues(
+    Genesys_Cloud_DNC_List__c dncListSettings = Genesys_Cloud_DNC_List__c.getValues(
       'DNC_List_Id'
     );
     return dncListSettings.DNC_List_Id__c;
