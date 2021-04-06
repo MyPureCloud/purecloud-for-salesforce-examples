@@ -1,44 +1,46 @@
-# Events in Salesforce Lightning App
-This repository contains an example component that allows Salesforce Lightning Experience users to test PureCloud for Salesforce events in a Salesforce Lightning app.
+# Events in Salesforce Lightning app
 
-# Table of Contents
+This repository contains an example component that allows Salesforce Lightning Experience users to test Genesys Cloud for Salesforce events in a Salesforce Lightning app.
 
-* [Getting Started](#getting-started)
+## Table of contents
+
+* [Getting started](#getting-started)
   * [TL;DR](#tldr)
   * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Configuration](#configuration)
-  * [Usage](#usage)
-* [Additional Information](#additional-information)
+* [Installation](#installation)
+* [Configuration](#configuration)
+* [Usage](#usage)
+* [Additional information](#additional-information)
 
-# Getting Started
+## Getting started
 
-## TL;DR
+### TL;DR
 
-1. Check the version of your PureCloud for Salesforce managed package.
+1. Check the version of your Genesys Cloud for Salesforce managed package.
 2. Create a Lightning app with the example code in the repository.
-3. Enable client events in PureCloud for Salesforce.
-4. Use the example app to test PureCloud for Salesforce events.
+3. Enable client events in Genesys Cloud for Salesforce.
+4. Use the example app to test Genesys Cloud for Salesforce events.
 
-## Prerequisites
+### Prerequisites
 
-* Version 2.49 or later of the [PureCloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
+* Version 2.49 or later of the [Genesys Cloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization
 
-# Installation
+## Installation
 
-### Check the Version of the Managed Package
+### Check the version of the managed package
 
-1. Check the version of your PureCloud for Salesforce managed package.
+1. Check the version of your Genesys Cloud for Salesforce managed package.
 2. If the managed package is not version 2.49 or later, update the managed package.
 
-### Create an Apex Class
+### Create an Apex class
 
 1. In Salesforce Lightning Experience, open **Developer Console**.
 2. Click **File** > **New** > **Apex Class**.
 3. Enter a name for your Apex class and click **OK**.
 4. Copy the contents of **PCSalesforceExampleController.apxc** in the repository to your file and then save the file.
 
-### Create a Lightning Component
+### Create a Lightning component
+
 1. In the Developer Console, click **File** > **New** > **Lightning Component**.
 2. Enter a name for your Lightning Bundle and click **Submit**.
 3. Copy the contents of **PCSalesforceEventsExample.cmp** in the repository to your file and then save the file.
@@ -49,7 +51,7 @@ This repository contains an example component that allows Salesforce Lightning E
 8. In the Lightning component navigation, click **Style**.
 9. Copy the contents of **PCSalesforceEventsExample.css** in the repository to your file and then save the file.
 
-### Add a Utility Item
+### Add a utility item
 
 1. In Salesforce Lightning Experience, click **Setup**.
 2. Search for and click **App Manager**.
@@ -64,15 +66,16 @@ This repository contains an example component that allows Salesforce Lightning E
 
 The Lightning component now appears on the lower-left corner of certain Lightning Experience pages.
 
-# Configuration
+## Configuration
 
 1. In Salesforce Lightning Experience, click **Setup**.
 2. Search for and click **Installed Packages**.
-3. On the **Installed Packages** page, click **Configure** next to the PureCloud for Salesforce package.
-4. Under **Choose a Call Center**, select **PureCloud for Salesforce Lightning**.
-5. Select **Enable Client Events**.
-6. Under **Client Event Types**, at a minimum move **Interaction** and **UserAction** from **Available** to **Chosen**.
-7. Click **Save**.
+3. On the **Installed Packages** page, click **Configure** next to the Genesys Cloud for Salesforce package.
+4. Under **Choose a Call Center**, select **Genesys Cloud for Salesforce Lightning**.
+5. Under **Client Event Settings**, configure **Client Event Messages**.
+6. For **Client Event Message Type**, select **Window.postMessage API**.
+7. For **Client Event Types**, at a minimum move **Interaction** and **UserAction** from **Available** to **Chosen**.
+8. Click **Save**.
 
 ## Usage
 
@@ -81,10 +84,10 @@ After you complete the steps under **Installation** and **Configuration**, click
 * You can change the status of your user.
 * You can also change the state of an active interaction with pickup, disconnect, hold, mute, or secure pause.
 
-For more information, see [Events in Salesforce (Resource Center)](https://help.mypurecloud.com/?p=77239).
+## Additional information
 
-# Additional Information
+* [Configure client events](https://help.mypurecloud.com/?p=241665) in the Genesys Cloud Resource Center
+* [Events in Salesforce](https://help.mypurecloud.com/?p=77239) in the Genesys Cloud Resource Center
+* [About Genesys Cloud for Salesforce](https://help.mypurecloud.com/?p=65221) in the Genesys Cloud Resource Center
 
 This content is [licensed](LICENSE) under the MIT license.
-
-For more information about PureCloud for Salesforce, see [About PureCloud for Salesforce (Resource Center)](https://help.mypurecloud.com/?p=65221).
