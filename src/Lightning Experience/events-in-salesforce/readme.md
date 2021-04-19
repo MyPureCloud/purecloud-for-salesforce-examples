@@ -70,8 +70,8 @@ The Lightning component now appears on the lower-left corner of certain Lightnin
 4. Under **Choose a Call Center**, select **Genesys Cloud for Salesforce Lightning**.
 5. Under **Client Event Settings**, configure **Client Event Messages**.
 6. For **Client Event Message Type**, select **Lightning Message Channel**.
-6. For **Client Event Types**, at a minimum move **Interaction** and **UserAction** from **Available** to **Chosen**.
-7. Click **Save**.
+7. For **Client Event Types**, at a minimum move **Interaction** and **UserAction** from **Available** to **Chosen**.
+8. Click **Save**.
 
 ## Usage
 

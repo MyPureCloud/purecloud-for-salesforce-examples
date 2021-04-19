@@ -22,7 +22,7 @@ This repository contains various example applications for Genesys Cloud for Sale
 ## Installation
 
 1. Locate an example application that you want to try.
-3. Follow the instructions in the README.md file for the example application.
+2. Follow the instructions in the README.md file for the example application.
 
 ## Additional information
 
