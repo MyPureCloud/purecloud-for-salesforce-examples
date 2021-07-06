@@ -55,5 +55,23 @@
                 },
             }, clientOrigin);
         }
-    }
+    },
+    
+    eventSubscribe: function(component) {
+        var clientOrigin = component.get('v.clientOrigin');
+        var source = component.get('v.postMessageSource');
+        var subscriptionType = component.get('v.subscriptionType');
+        var subscriptionCategories = component.get('v.subscriptionCategories');
+        var categories = subscriptionCategories.split(',');
+        
+        if(source) {
+            source.postMessage({
+                type: 'PureCloud.Subscribe',
+                data: {
+                    type: subscriptionType,
+                    categories: categories 
+                }
+            }, clientOrigin);
+        }
+    },
 })

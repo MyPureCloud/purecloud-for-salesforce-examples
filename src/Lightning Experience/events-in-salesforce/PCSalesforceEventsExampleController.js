@@ -29,6 +29,13 @@
                                 component.set("v.interactionId", event.data.data.id );
                             }
                         }
+                        
+                        if(event.source && event.data.type === 'Notification') { 
+                            if(event.data.category === 'conversationTranscription') {
+                                var message = JSON.stringify(event.data);
+                                helper.outputToConsole(component, message);
+                            }
+                        }
                     }
                 }), false);
             }
@@ -66,5 +73,9 @@
 
     addAttributes: function(component, event, helper) {
         helper.addAttributes(component);
+    },
+    
+    subscribe: function(component, event, helper) {
+        helper.eventSubscribe(component);
     }
 })

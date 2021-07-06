@@ -2,6 +2,8 @@
     <aura:handler name="init" value="{!this}" action="{!c.initComponent}"/>
     <aura:attribute name="interactionId" type="String" />
     <aura:attribute name="attributes" type="String" />
+    <aura:attribute name="subscriptionType" type="String" default="Notification"></aura:attribute>
+    <aura:attribute name="subscriptionCategories" type="String" default="conversationTranscription"></aura:attribute>
     <aura:attribute name="clientOrigin" type ="String" />
     <aura:attribute name="consoleMessages" type ="String" default=""/>
     <aura:attribute name="postMessageSource" type = "Object" />
@@ -27,6 +29,13 @@
                 <lightning:button label="Break" onclick="{!c.statusBreak }" />
                 <lightning:button label="Available" onclick="{!c.statusAvailable }" />
             </lightning:buttonGroup>
+        </div>
+        <div class="button-set">
+            <label class="event-label">Subscribe:</label>
+            <br/>
+            <ui:inputText label="Type: " class="field" value="{!v.subscriptionType}" updateOn="change"/>
+            <ui:inputText label="Categories: " class="field" value="{!v.subscriptionCategories}" updateOn="change"/>
+            <lightning:button label="Subscribe" onclick="{!c.subscribe }" />
         </div>
         <div>
         	<label class="event-label">Add Custom Attributes:</label>
