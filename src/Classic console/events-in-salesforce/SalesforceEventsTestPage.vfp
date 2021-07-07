@@ -7,6 +7,15 @@
          display: block;
          padding-top: 6px;
       }
+      .subscriptionInput {
+       	display:flex;
+      }
+      .subscribeButton {
+        margin-top:-5%;
+      }
+      .notificationInput {
+       	margin-left:10%;
+      }
    </style>
 
    <script type="text/javascript">
@@ -121,6 +130,8 @@
       <label>Interaction Id: </label>
       <input id="interactionId" type="text" value="" size = "40"/>
    <br/><hr/>
+      <label>Interaction Events: </label>
+      <br/>
       <input type="button" onclick="changeState('disconnect')" value="disconnect" />
       <input type="button" onclick="changeState('pickup')" value="pickup" />
       <input type="button" onclick="changeState('mute')" value="mute" />
@@ -136,12 +147,17 @@
        <input type="button" onclick="addCustomAttributes()" value="Add Custom Attributes" />
        <hr/>
        <label>Subscribe: </label>
-       <label>Type:</label>
-       <input id="subscriptionType" type="text" value="Notification" size="100"/>
-       <label>Categories:</label>
-       <input id="subscriptionCategories" type="text" value="conversationTranscription" size="100"/> 
        <br/>
-       <input type="button" onclick="subscribeToEvent()" value="Subscribe to Event" />
+       <div class="subscriptionInput">
+        <label>Type: </label>
+       	<input id="subscriptionType" class="notificationInput" type="text"  value="Notification" size="100"/>
+       </div>
+       <div class="subscriptionInput">
+       	<label>Categories: </label>
+       	<input id="subscriptionCategories" type="text" value="conversationTranscription" size="100"/> 
+       </div>
+       <br/>
+       <input type="button" class="subscribeButton" onclick="subscribeToEvent()" value="Subscribe to Event" />
     </span>
     <hr/>
    <span>
