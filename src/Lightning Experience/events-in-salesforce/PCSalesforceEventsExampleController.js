@@ -40,5 +40,9 @@
 
     addAttributes: function(component, event, helper) {
         helper.addAttributes(component);
-    }
+    },
+    
+    subscribe: function(component, event, helper) {
+        helper.eventSubscribe(component);
+    },
 })

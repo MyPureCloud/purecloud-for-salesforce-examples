@@ -7,6 +7,15 @@
          display: block;
          padding-top: 6px;
       }
+      .subscriptionInput {
+       	display:flex;
+      }
+      .subscribeButton {
+        margin-top:-5%;
+      }
+      .notificationInput {
+       	margin-left:10%;
+      }
    </style>
 
    <script type="text/javascript">
@@ -64,6 +73,20 @@
         });
         sforce.console.fireEvent('inin.salesforce.constants.consoleevent.addCustomAttributes', msg, function(data){console.log(data)});
     }
+    
+    function subscribeToEvent() {
+        var subscriptionType = document.getElementById('subscriptionType').value;
+        var subscriptionCategories = document.getElementById('subscriptionCategories').value;
+        var categories = subscriptionCategories.split(',');
+        
+        var msg = JSON.stringify({
+        	data: {
+                type: subscriptionType,
+                categories: categories
+            }
+        });
+        sforce.console.fireEvent('inin.salesforce.constants.consoleevent.subscribe', msg, function(data){console.log(data)});
+    }
 
     sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.UPDATE_STATUS', function(data){
         OutputToConsole(JSON.stringify(data));
@@ -97,28 +120,46 @@
         }
         OutputToConsole(JSON.stringify(data));
     });
+    
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.subscribe', function(data){
+        OutputToConsole(JSON.stringify(data));
+    });
 
    </script>
    <span class="statusSelection">
       <label>Interaction Id: </label>
       <input id="interactionId" type="text" value="" size = "40"/>
    <br/><hr/>
-      <input type="button" onclick="changeState('disconnect')" value="disconnect interaction" />
-      <input type="button" onclick="changeState('pickup')" value="pickup interaction" />
-      <input type="button" onclick="changeState('mute')" value="mute interaction" />
-      <input type="button" onclick="changeState('hold')" value="hold interaction" />
-      <input type="button" onclick="changeState('securePause')" value = "secure pause interaction" />
+      <label>Interaction Events: </label>
+      <br/>
+      <input type="button" onclick="changeState('disconnect')" value="disconnect" />
+      <input type="button" onclick="changeState('pickup')" value="pickup" />
+      <input type="button" onclick="changeState('mute')" value="mute" />
+      <input type="button" onclick="changeState('hold')" value="hold" />
+      <input type="button" onclick="changeState('securePause')" value = "secure pause" />
    <hr/>
-      <input type="button" onclick="changeStatus('available')" value="Change status to Available" /> |
-      <input type="button" onclick="changeStatus('onQueue')" value="Change Status to On Queue" />
+      <input type="button" onclick="changeStatus('available')" value="Status Available" /> |
+      <input type="button" onclick="changeStatus('onQueue')" value="Status On Queue" />
    <hr/>
       <label>Custom Attributes: </label>
        <input id="customAttributes" type="text" value="" size="100"/>
        <br/>
        <input type="button" onclick="addCustomAttributes()" value="Add Custom Attributes" />
-   <hr/>
-   </span>
-   <hr/>
+       <hr/>
+       <label>Subscribe: </label>
+       <br/>
+       <div class="subscriptionInput">
+        <label>Type: </label>
+       	<input id="subscriptionType" class="notificationInput" type="text"  value="Notification" size="100"/>
+       </div>
+       <div class="subscriptionInput">
+       	<label>Categories: </label>
+       	<input id="subscriptionCategories" type="text" value="conversationTranscription" size="100"/> 
+       </div>
+       <br/>
+       <input type="button" class="subscribeButton" onclick="subscribeToEvent()" value="Subscribe to Event" />
+    </span>
+    <hr/>
    <span>
        <textArea id="OUTPUTCONSOLE" rows="20" cols="100" ></textArea>
    </span>

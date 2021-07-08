@@ -46,5 +46,18 @@
                 id: id
             }
         });
+    },
+    
+    eventSubscribe: function(component) {
+        var subscriptionType = component.get('v.subscriptionType');
+        var subscriptionCategories = component.get('v.subscriptionCategories');
+        var categories = subscriptionCategories.split(',');
+        this.sendMessage(component, {
+            type: 'PureCloud.Subscribe',
+            data: {
+                type: subscriptionType, 
+                categories: categories 
+            }
+        });
     }
 })
