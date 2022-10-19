@@ -59,5 +59,25 @@
                 categories: categories 
             }
         });
+    },
+    
+    addAssociation: function(component) {
+        var id = component.get('v.interactionId');
+        var associationText = component.get('v.association');
+        var association = {};
+        try{
+            association = JSON.parse(associationText);
+        } catch(e){
+            console.log('Error parsing association: ' + JSON.stringify(e.message));
+        }
+        this.sendMessage(component, {
+            type: 'PureCloud.Interaction.addAssociation',
+            data: {
+                interactionId: id,
+                id: association.objectId,
+                type: association.type,
+                text: association.text
+            }
+        });
     }
 })

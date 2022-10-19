@@ -45,4 +45,8 @@
     subscribe: function(component, event, helper) {
         helper.eventSubscribe(component);
     },
+    
+    addAssociation: function(component, event, helper) {
+        helper.addAssociation(component);
+    },
 })

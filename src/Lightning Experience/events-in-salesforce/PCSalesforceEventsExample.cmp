@@ -1,6 +1,7 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access="global">
     <aura:attribute name="interactionId" type="String" />
     <aura:attribute name="attributes" type="String" />
+    <aura:attribute name="association" type="String" />
     <aura:attribute name="subscriptionType" type="String" default="Notification"></aura:attribute>
     <aura:attribute name="subscriptionCategories" type="String" default="conversationTranscription"></aura:attribute>
     <aura:attribute name="consoleMessages" type ="String" default=""/>
@@ -45,6 +46,12 @@
         <div class="button-set">
         	<label class="event-label">Subscription Events:</label>
             <lightning:textarea class="output-console" name="outputConsole" value="{!v.consoleMessages}" updateOn="change" />
+        </div>
+        <div>
+        	<label class="event-label">Add Association:</label>
+            <br />
+            <ui:inputText class="field" value="{!v.association}" updateOn="change"/>
+            <lightning:button label="Add" onclick="{!c.addAssociation}" />
         </div>
     </div>
 </aura:component>

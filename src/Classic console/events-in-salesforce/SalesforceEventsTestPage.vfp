@@ -8,13 +8,13 @@
          padding-top: 6px;
       }
       .subscriptionInput {
-       	display:flex;
+        display:flex;
       }
       .subscribeButton {
         margin-top:-5%;
       }
       .notificationInput {
-       	margin-left:10%;
+        margin-left:10%;
       }
    </style>
 
@@ -51,7 +51,7 @@
         var msg = JSON.stringify({data: {
                 id: id,
                 action: state
-        	}
+            }
         });
         sforce.console.fireEvent('inin.salesforce.constants.consoleevent.changestate', msg, function(data){console.log(data)});
     }
@@ -61,17 +61,37 @@
         var customAttributesText = document.getElementById('customAttributes').value;
         var customAttributes = {};
         try{
-        	customAttributes = JSON.parse(customAttributesText);
+            customAttributes = JSON.parse(customAttributesText);
         } catch(e){
             console.log('Error parsing custom attributes: ' + JSON.stringify(e.message));
         }
         var msg = JSON.stringify({
             data: {
-            	id: id,
-            	attributes: customAttributes
-        	}
+                id: id,
+                attributes: customAttributes
+            }
         });
         sforce.console.fireEvent('inin.salesforce.constants.consoleevent.addCustomAttributes', msg, function(data){console.log(data)});
+    }
+    
+    function addAssociation() {
+        var id = getInteractionId();
+        var associationText = document.getElementById('association').value;
+        var association = {};
+        try{
+            association = JSON.parse(associationText);
+        } catch(e){
+            console.log('Error parsing association: ' + JSON.stringify(e.message));
+        }
+        var msg = JSON.stringify({
+            data: {
+                interactionId: id,
+                id: association.objectId,
+                type: association.type,
+                text: association.text
+            }
+        });
+        sforce.console.fireEvent('inin.salesforce.constants.consoleevent.addAssociation', msg, function(data){console.log(data)});
     }
     
     function subscribeToEvent() {
@@ -80,7 +100,7 @@
         var categories = subscriptionCategories.split(',');
         
         var msg = JSON.stringify({
-        	data: {
+            data: {
                 type: subscriptionType,
                 categories: categories
             }
@@ -150,14 +170,20 @@
        <br/>
        <div class="subscriptionInput">
         <label>Type: </label>
-       	<input id="subscriptionType" class="notificationInput" type="text"  value="Notification" size="100"/>
+        <input id="subscriptionType" class="notificationInput" type="text"  value="Notification" size="100"/>
        </div>
        <div class="subscriptionInput">
-       	<label>Categories: </label>
-       	<input id="subscriptionCategories" type="text" value="conversationTranscription" size="100"/> 
+        <label>Categories: </label>
+        <input id="subscriptionCategories" type="text" value="conversationTranscription" size="100"/> 
        </div>
        <br/>
        <input type="button" class="subscribeButton" onclick="subscribeToEvent()" value="Subscribe to Event" />
+          <hr/>
+      <label>Add Association: </label>
+       <input id="association" type="text" value="" size="100"/>
+       <br/>
+       <input type="button" class="addAssociationButton" onclick="addAssociation()" value="Add Association" />
+       <hr/>
     </span>
     <hr/>
    <span>
