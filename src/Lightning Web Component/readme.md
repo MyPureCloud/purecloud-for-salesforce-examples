@@ -9,7 +9,7 @@ This repository contains an example LWC that allows Salesforce Lightning Experie
   * [Prerequisites](#prerequisites)
 * [Installation](#installation)
   * [Check the version of the managed package](#check-the-version-of-the-managed-package)
-  * [Create a Lightning component](#create-a-lightning-web-component)
+  * [Create a Lightning Web Component](#create-a-lightning-web-component)
   * [Add a utility item](#add-a-utility-item)
 * [Configuration](#configuration)
 * [Usage](#usage)
@@ -35,7 +35,7 @@ This repository contains an example LWC that allows Salesforce Lightning Experie
 1. Check the version of your Genesys Cloud for Salesforce managed package.
 2. If the managed package does not support Lightning Message Service, update the managed package to a version that supports Lightning Message Service.
 
-### Create a Lightning Web component
+### Create a Lightning Web Component
 
 1. In the VSCode open Command Pallette by pressing **Ctrl + Shift + P**.
 2. Enter a name for your Lightning Web Component and hit **Enter**.
