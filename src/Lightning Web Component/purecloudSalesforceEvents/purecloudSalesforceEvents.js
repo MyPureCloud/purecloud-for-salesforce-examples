@@ -46,10 +46,10 @@ export default class PurecloudSalesforceEvents extends LightningElement {
     }
 
     // Handler for message received by component
-    handleMessage(message) {        
-        this.eventlogs = this.eventlogs+JSON.stringify(message)+'<br/><br/>';
+    handleMessage(message) {
         if (message) {
             console.log(JSON.stringify(message));
+            this.eventlogs = this.eventlogs+JSON.stringify(message)+'<br/><br/>';
         }
     }
 
