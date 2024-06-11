@@ -121,7 +121,7 @@
         OutputToConsole(JSON.stringify(data));
     });
     
-    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.subscribe', function(data){
+    sforce.console.addEventListener('inin.salesforce.constants.consoleevent.pc.CLIENT_EVENT', function(data){
         OutputToConsole(JSON.stringify(data));
     });
 
