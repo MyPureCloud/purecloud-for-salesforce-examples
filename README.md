@@ -26,7 +26,7 @@ This repository contains various example applications for Genesys Cloud for Sale
 
 ## Additional information
 
-* [Set up the Genesys Cloud for Salesforce integration](https://help.mypurecloud.com/?p=39326) in the Genesys Cloud Resource Center
-* [About Genesys Cloud for Salesforce](https://help.mypurecloud.com/?p=65221) in the Genesys Cloud Resource Center.
+* [Set up the Genesys Cloud for Salesforce integration](https://help.genesys.cloud/?p=39326) in the Genesys Cloud Resource Center
+* [About Genesys Cloud for Salesforce](https://help.genesys.cloud/?p=65221) in the Genesys Cloud Resource Center.
 
 This content is [licensed](LICENSE) under the MIT license.

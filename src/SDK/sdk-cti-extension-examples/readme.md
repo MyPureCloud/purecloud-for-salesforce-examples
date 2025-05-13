@@ -95,9 +95,9 @@ In Salesforce, configure the extension points in the managed package to use the 
 
 ## Additional information
 
-* [Extension points in Genesys Cloud for Salesforce](https://help.mypurecloud.com/?p=225733 "Opens the Extension points in Genesys Cloud for Salesforce article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
-* [Use the extension points to customize saving interaction logs](https://help.mypurecloud.com/?p=225794 "Opens the Use the extension points to customize saving interaction logs article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
-* [Configure extension points](https://help.mypurecloud.com/?p=225479 "Opens the Configure extension points article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
-* [About Genesys Cloud for Salesforce](https://help.mypurecloud.com/?p=65221 "Opens the About Genesys Cloud for Salesforce article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
+* [Extension points in Genesys Cloud for Salesforce](https://help.genesys.cloud/?p=225733 "Opens the Extension points in Genesys Cloud for Salesforce article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
+* [Use the extension points to customize saving interaction logs](https://help.genesys.cloud/?p=225794 "Opens the Use the extension points to customize saving interaction logs article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
+* [Configure extension points](https://help.genesys.cloud/?p=225479 "Opens the Configure extension points article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
+* [About Genesys Cloud for Salesforce](https://help.genesys.cloud/?p=65221 "Opens the About Genesys Cloud for Salesforce article in the Genesys Cloud Resource Center") (Genesys Cloud Resource Center).
 
 This content is [licensed](/LICENSE) under the MIT license.
