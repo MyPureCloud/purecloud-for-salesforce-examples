@@ -20,7 +20,7 @@ This repository contains examples for the Genesys Cloud for Salesforce SDK Rest 
 ## Prerequisites
 
 * The [Genesys Cloud for Salesforce](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000000pvMdEAI) managed package installed in your Salesforce organization.
-* [Authentication](https://help.mypurecloud.com/?p=129103) configured in the Genesys Cloud for Salesforce package.
+* [Authentication](https://help.genesys.cloud/?p=129103) configured in the Genesys Cloud for Salesforce package.
 
 
 ## Rest Class
@@ -174,4 +174,4 @@ HttpResponse response = purecloud.SDK.Rest.post('/platform/api/v2/conversations/
 
 This content is [licensed](/LICENSE) under the MIT license.
 
-For more information about Genesys Cloud for Salesforce, see [About Genesys Cloud for Salesforce (Resource Center)](https://help.mypurecloud.com/?p=65221).
+For more information about Genesys Cloud for Salesforce, see [About Genesys Cloud for Salesforce (Resource Center)](https://help.genesys.cloud/?p=65221).

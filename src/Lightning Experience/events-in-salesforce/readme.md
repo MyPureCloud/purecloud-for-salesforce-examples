@@ -82,9 +82,9 @@ After you complete the steps under **Installation** and **Configuration**, click
 
 ## Additional information
 
-* [Configure client events](https://help.mypurecloud.com/?p=241665) in the Genesys Cloud Resource Center
-* [Events in Salesforce](https://help.mypurecloud.com/?p=77239) in the Genesys Cloud Resource Center
-* [About Genesys Cloud for Salesforce](https://help.mypurecloud.com/?p=65221) in the Genesys Cloud Resource Center
+* [Configure client events](https://help.genesys.cloud/?p=241665) in the Genesys Cloud Resource Center
+* [Events in Salesforce](https://help.genesys.cloud/?p=77239) in the Genesys Cloud Resource Center
+* [About Genesys Cloud for Salesforce](https://help.genesys.cloud/?p=65221) in the Genesys Cloud Resource Center
 
 This content is [licensed](/LICENSE) under the MIT license.
 

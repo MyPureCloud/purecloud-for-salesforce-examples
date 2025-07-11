@@ -58,10 +58,10 @@ After you complete the steps under **Installation**, click the custom console co
 * You can change the status of your user.
 * You can also change the state of an active interaction with pickup, disconnect, hold, mute, or secure pause.
 
-For more information, see [Events in Salesforce (Resource Center)](https://help.mypurecloud.com/?p=77239).
+For more information, see [Events in Salesforce (Resource Center)](https://help.genesys.cloud/?p=77239).
 
 # Additional Information
 
 This content is [licensed](/LICENSE) under the MIT license.
 
-For more information about PureCloud for Salesforce, see [About PureCloud for Salesforce (Resource Center)](https://help.mypurecloud.com/?p=65221).
+For more information about PureCloud for Salesforce, see [About PureCloud for Salesforce (Resource Center)](https://help.genesys.cloud/?p=65221).
